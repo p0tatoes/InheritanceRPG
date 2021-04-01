@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectionScreen">
+
+    <TextView
+        android:id="@+id/statTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <Button
+        android:id="@+id/selectionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/berserkerBtn"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Berserker"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/knightBtn"
+        app:layout_constraintEnd_toStartOf="@+id/knightBtn"
+        app:layout_constraintTop_toTopOf="@+id/knightBtn" />
+
+    <Button
+        android:id="@+id/knightBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Knight"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/oracleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/oracleBtn"
+        app:layout_constraintTop_toTopOf="@+id/oracleBtn" />
+
+    <Button
+        android:id="@+id/oracleBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Oracle"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/wizardBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Wizard"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/oracleBtn"
+        app:layout_constraintStart_toEndOf="@+id/oracleBtn"
+        app:layout_constraintTop_toTopOf="@+id/oracleBtn" />
+
+    <Button
+        android:id="@+id/assassinBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Assassin"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/wizardBtn"
+        app:layout_constraintStart_toEndOf="@+id/wizardBtn"
+        app:layout_constraintTop_toTopOf="@+id/wizardBtn" />
+
+    <Button
+        android:id="@+id/thiefBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Thief"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/assassinBtn"
+        app:layout_constraintStart_toEndOf="@+id/assassinBtn"
+        app:layout_constraintTop_toTopOf="@+id/assassinBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
