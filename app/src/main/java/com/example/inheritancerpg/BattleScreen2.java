@@ -133,7 +133,7 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
                         }
                     }
                     else if (heroClass == 3 || heroClass == 4) { // Mage reduced damage to marauder
-                        heroDMG -= Math.round(0.40 * heroDMG);
+                        heroDMG -= Math.round(0.3 * heroDMG);
                         monsterCurHealth = Math.max(0, monsterCurHealth - heroDMG);
                         monsterHealthTxt.setText("HP: "+ monsterCurHealth);
                         messageTxt.setText("You dealt "+ heroDMG);
