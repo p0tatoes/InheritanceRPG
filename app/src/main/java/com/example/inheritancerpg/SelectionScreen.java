@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-public class SelectionScreen extends AppCompatActivity implements View.OnClickListener {
+public class SelectionScreen extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     TextView statTxt;
-    Button berserkerBtn, knightBtn, oracleBtn, wizardBtn, assassinBtn, thiefBtn, selectionBtn;
+    Spinner heroSpinner;
+    Button selectionBtn;
     int heroClass;
 
     // Declaration for classes
@@ -30,28 +34,20 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
         // Declaration for UI elements
         statTxt = findViewById(R.id.statTxt);
 
-        berserkerBtn = findViewById(R.id.berserkerBtn);
-        berserkerBtn.setOnClickListener(this);
+        heroSpinner = findViewById(R.id.heroSpinner);
 
-        knightBtn = findViewById(R.id.knightBtn);
-        knightBtn.setOnClickListener(this);
+        // Drop down menu
+        ArrayAdapter<String> heroChoice = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.heroes));
+        heroChoice.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        heroSpinner.setAdapter(heroChoice);
+        heroSpinner.setOnItemSelectedListener(this);
 
-        oracleBtn = findViewById(R.id.oracleBtn);
-        oracleBtn.setOnClickListener(this);
-
-        wizardBtn = findViewById(R.id.wizardBtn);
-        wizardBtn.setOnClickListener(this);
-
-        assassinBtn = findViewById(R.id.assassinBtn);
-        assassinBtn.setOnClickListener(this);
-
-        thiefBtn = findViewById(R.id.thiefBtn);
-        thiefBtn.setOnClickListener(this);
-
+        // Button
         selectionBtn = findViewById(R.id.selectionBtn);
         selectionBtn.setOnClickListener(this);
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -59,8 +55,20 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
         Intent battle = new Intent(this, BattleScreen.class);
 
         switch (v.getId()) {
-            case R.id.berserkerBtn:
-                heroClass = 1;
+            case R.id.selectionBtn:
+                    battle.putExtra("HERO_CLASS", this.heroClass);
+                    startActivity(battle);
+                break;
+        }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String text = heroSpinner.getSelectedItem().toString();
+
+        switch (text) {
+            case "Berserker":
+                this.heroClass = 1;
                 statTxt.setText(marviticus.heavyName+ "\n"+
                         "STATS:\n"+
                         "HP: "+ marviticus.heavyTotalHP+ "\n"+
@@ -68,16 +76,16 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "A HERO THAT DEALS MORE DAMAGE WHEN WEAKENED" +
                         "\n\nSPECIAL ATTRIBUTE: DAMAGE INCREASES BY 25% PER POINT OF HEALTH LOST");
                 break;
-            case R.id.knightBtn:
-                heroClass = 2;
+            case "Knight":
+                this.heroClass = 2;
                 statTxt.setText(sirKent.heavyName+ "\n"+
                         "STATS:\n"+
                         "HP: "+ sirKent.heavyTotalHP+ "\n"+
                         "DAMAGE: "+ sirKent.heavyMinDMG+ " - "+ sirKent.heavyMaxDMG+ "\n\n"+
                         "A HERO THAT BOASTS SUPERIOR DURABILITY");
                 break;
-            case R.id.oracleBtn:
-                heroClass = 3;
+            case "Oracle":
+                this.heroClass = 3;
                 statTxt.setText(yin.mageName+ "\n"+
                         "STATS:\n"+
                         "HP:"+ yin.mageTotalHP+ "\n"+
@@ -85,8 +93,8 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "A HERO THAT DEALS MAGICAL DAMAGE AND BOASTS HIGHER DURABILITY" +
                         "\n\nSPECIAL ATTRIBUTE: DEALS 15% MORE DAMAGE TO UNDEAD");
                 break;
-            case R.id.wizardBtn:
-                heroClass = 4;
+            case "Wizard":
+                this.heroClass = 4;
                 statTxt.setText(koji.mageName+ "\n"+
                         "STATS:\n"+
                         "HP:"+ koji.mageTotalHP+ "\n"+
@@ -94,8 +102,8 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "A HERO THAT BOASTS SUPERIOR MAGICAL DAMAGE" +
                         "\n\nSPECIAL ATTRIBUTE: DEALS 15% MORE DAMAGE TO UNDEAD");
                 break;
-            case R.id.assassinBtn:
-                heroClass = 5;
+            case "Assassin":
+                this.heroClass = 5;
                 statTxt.setText(marcus.lightName+ "\n"+
                         "STATS:\n"+
                         "HP:"+ marcus.lightTotalHP+ "\n"+
@@ -103,8 +111,8 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "A HERO THAT HAS A CHANCE TO DO DOUBLE DAMAGE" +
                         "\n\nSPECIAL ATTRIBUTE: HAS 25% CHANCE TO DEAL DOUBLE DAMAGE");
                 break;
-            case R.id.thiefBtn:
-                heroClass = 6;
+            case "Thief":
+                this.heroClass = 6;
                 statTxt.setText(ossas.lightName+ "\n"+
                         "STATS:\n"+
                         "HP:"+ ossas.lightTotalHP+ "\n"+
@@ -112,13 +120,11 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "A HERO THAT HAS A CHANCE TO EVADE ATTACKS" +
                         "\n\nSPECIAL ATTRIBUTE: HAS 30% CHANCE TO EVADE INCOMING DAMAGE");
                 break;
-            case R.id.selectionBtn:
-                if (heroClass > 0) {
-                    battle.putExtra("HERO_CLASS", heroClass);
-                    startActivity(battle);
-                }
-                break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }
