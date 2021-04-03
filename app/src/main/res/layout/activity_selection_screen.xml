@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#434343"
     tools:context=".SelectionScreen">
 
     <TextView
@@ -11,89 +12,116 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:gravity="center"
+        android:textStyle="bold"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <Button
         android:id="@+id/selectionBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="68dp"
+        android:backgroundTint="#228726"
         android:text="Select"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/berserkerBtn"
-        android:layout_width="108dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Berserker"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/knightBtn"
-        app:layout_constraintEnd_toStartOf="@+id/knightBtn"
-        app:layout_constraintTop_toTopOf="@+id/knightBtn" />
-
-    <Button
-        android:id="@+id/knightBtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Knight"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/oracleBtn"
-        app:layout_constraintEnd_toStartOf="@+id/oracleBtn"
-        app:layout_constraintTop_toTopOf="@+id/oracleBtn" />
-
-    <Button
-        android:id="@+id/oracleBtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Oracle"
-        android:textSize="12sp"
+        android:layout_marginTop="116dp"
+        android:text="SELECT A HERO"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/heroSpinner"
+        android:layout_width="180dp"
+        android:background="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/berserker"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        app:srcCompat="@drawable/berserker" />
 
-    <Button
-        android:id="@+id/wizardBtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Wizard"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/oracleBtn"
-        app:layout_constraintStart_toEndOf="@+id/oracleBtn"
-        app:layout_constraintTop_toTopOf="@+id/oracleBtn" />
+    <ImageView
+        android:id="@+id/assassin"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/assassin" />
 
-    <Button
-        android:id="@+id/assassinBtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Assassin"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/wizardBtn"
-        app:layout_constraintStart_toEndOf="@+id/wizardBtn"
-        app:layout_constraintTop_toTopOf="@+id/wizardBtn" />
 
-    <Button
-        android:id="@+id/thiefBtn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Thief"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/assassinBtn"
-        app:layout_constraintStart_toEndOf="@+id/assassinBtn"
-        app:layout_constraintTop_toTopOf="@+id/assassinBtn" />
+    <ImageView
+        android:id="@+id/oracle"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oracle" />
+
+    <ImageView
+        android:id="@+id/thief"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thief" />
+
+    <ImageView
+        android:id="@+id/wizard"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wizerd" />
+
+    <ImageView
+        android:id="@+id/knightknight"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="168dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/knightknight" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

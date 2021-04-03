@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">InheritanceRPG</string>
+    <string-array name="heroes" >
+        <item>Berserker</item>
+        <item>Knight</item>
+        <item>Oracle</item>
+        <item>Wizard</item>
+        <item>Assassin</item>
+        <item>Thief</item>
+    </string-array>
 </resources>

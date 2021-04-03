@@ -4,26 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#434343"
     tools:context=".BattleScreen">
 
     <TextView
         android:id="@+id/heroNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="172dp"
         android:text="Hero"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/heroHealthTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="HP: XXXX"
+        android:textColor="#4CAF50"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/heroNameTxt"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="@+id/heroNameTxt"
         app:layout_constraintTop_toBottomOf="@+id/heroNameTxt" />
 
@@ -33,8 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Enemy"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,6 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="HP: XXXX"
+        android:textColor="#AC4139"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/monsterNameTxt"
         app:layout_constraintStart_toStartOf="@+id/monsterNameTxt"
         app:layout_constraintTop_toBottomOf="@+id/monsterNameTxt" />
@@ -53,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#F44336"
         android:text="Attack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,11 +72,95 @@
     <TextView
         android:id="@+id/messageTxt"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:gravity="center"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/zombie"
+        android:layout_width="153dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/zom" />
+
+    <ImageView
+        android:id="@+id/assassinB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="204dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/assassin" />
+
+    <ImageView
+        android:id="@+id/berserkerB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="204dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/berserker" />
+
+    <ImageView
+        android:id="@+id/knightB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="192dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/knightknight" />
+
+    <ImageView
+        android:id="@+id/oracleB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="188dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/oracle" />
+
+    <ImageView
+        android:id="@+id/thiefB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="188dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/thief" />
+
+    <ImageView
+        android:id="@+id/wizardB"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="204dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/wizerd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
