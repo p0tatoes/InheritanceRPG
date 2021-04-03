@@ -36,9 +36,9 @@ public class BattleScreen extends AppCompatActivity implements View.OnClickListe
     Berserker marviticus = new Berserker("Marviticus the Savage", 1000, 45, 80); // 1
     Knight sirKent = new Knight("Sir Kent of Brado", 1350, 200, 60, 95); // 2
     Oracle yin = new Oracle("Priestess Yin", 1000, 100, 50, 75); // 3
-    Wizard koji = new Wizard("Ko'Ji, Master of the Dark Arts", 800, 150, 60, 90); // 4
-    Assassin marcus = new Assassin("Marcus of the Sia Clan", 1000, 0.25, 40, 70); // 5
-    Thief ossas = new Thief("Ossas of the slums", 1000, 0.3, 30, 60); // 6
+    Wizard koji = new Wizard("Ko'Ji, Master of the Dark Arts", 900, 150, 60, 90); // 4
+    Assassin marcus = new Assassin("Marcus of the Sia Clan", 900, 0.25, 40, 70); // 5
+    Thief ossas = new Thief("Ossas of the slums", 900, 0.3, 30, 60); // 6
 
     // Declaration for enemy unit
     Undead lostSoul = new Undead("Lost Soul", 2000, 40, 60);
