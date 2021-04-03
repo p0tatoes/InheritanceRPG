@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#434343"
     tools:context=".BattleScreen2">
 
     <TextView
@@ -12,6 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="HP: XXXX"
+        android:textStyle="bold"
+        android:textColor="#AC4139"
         app:layout_constraintEnd_toEndOf="@+id/monsterNameTxt_2"
         app:layout_constraintStart_toStartOf="@+id/monsterNameTxt_2"
         app:layout_constraintTop_toBottomOf="@+id/monsterNameTxt_2" />
@@ -23,6 +26,8 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="44dp"
         android:text="Enemy"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,9 +35,11 @@
         android:id="@+id/heroNameTxt_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="176dp"
         android:text="Hero"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -42,6 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="HP: XXXX"
+        android:textColor="#4CAF50"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/heroNameTxt_2"
         app:layout_constraintStart_toStartOf="@+id/heroNameTxt_2"
         app:layout_constraintTop_toBottomOf="@+id/heroNameTxt_2" />
@@ -49,9 +58,10 @@
     <TextView
         android:id="@+id/messageTxt_2"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:text=""
+        android:layout_height="100dp"
         android:gravity="center"
+        android:text=""
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +72,91 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:text="Button"
+        android:backgroundTint="#F44336"
+        android:text="attack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/maurauder"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hornsguy" />
+
+    <ImageView
+        android:id="@+id/assassinC"
+        android:layout_width="150dp"
+        android:layout_height="158dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="196dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/assassin" />
+
+    <ImageView
+        android:id="@+id/berserkerC"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="188dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/berserker" />
+
+    <ImageView
+        android:id="@+id/knightC"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="188dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/knightknight" />
+
+    <ImageView
+        android:id="@+id/oracleC"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="180dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/oracle" />
+
+    <ImageView
+        android:id="@+id/thiefC"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="168dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/thief" />
+
+    <ImageView
+        android:id="@+id/wizardC"
+        android:layout_width="150dp"
+        android:layout_height="159dp"
+        android:layout_marginBottom="188dp"
+        android:rotationY="-166"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/wizerd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

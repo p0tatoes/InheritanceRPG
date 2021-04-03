@@ -3,9 +3,11 @@ package com.example.inheritancerpg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.SplittableRandom;
@@ -18,6 +20,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
     int heroClass, heroCurHealth, monsterCurHealth, lostHealth, heroDMG, heroMinDMG, heroMaxDMG, monsterDMG, monsterMinDMG, monsterMaxDMG;
     int turn = 1;
     boolean victory;
+
+    ImageView berserker;
+    ImageView knight;
+    ImageView oracle;
+    ImageView wizard;
+    ImageView assassin;
+    ImageView thief;
 
     // Declaration for heroes
     Berserker marviticus = new Berserker("Marviticus the Savage", 1000, 45, 80); // 1
@@ -42,6 +51,14 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
         monsterHealthTxt = findViewById(R.id.monsterHealthTxt_2);
         messageTxt = findViewById(R.id.messageTxt_2);
 
+        //Declaration for hero sprites
+        berserker = findViewById(R.id.berserkerC);
+        knight = findViewById(R.id.knightC);
+        oracle = findViewById(R.id.oracleC);
+        wizard = findViewById(R.id.wizardC);
+        assassin = findViewById(R.id.assassinC);
+        thief = findViewById(R.id.thiefC);
+
         attackBtn = findViewById(R.id.attackBtn_2);
         attackBtn.setOnClickListener(this);
 
@@ -53,6 +70,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+ heroCurHealth);
             heroMinDMG = marviticus.heavyMinDMG;
             heroMaxDMG = marviticus.heavyMaxDMG;
+
+            berserker.setVisibility(View.VISIBLE);
+            knight.setVisibility(View.INVISIBLE);
+            oracle.setVisibility(View.INVISIBLE);
+            wizard.setVisibility(View.INVISIBLE);
+            assassin.setVisibility(View.INVISIBLE);
+            thief.setVisibility(View.INVISIBLE);
         }
         else if (heroClass == 2) {
             heroNameTxt.setText(sirKent.heavyName);
@@ -60,6 +84,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+heroCurHealth);
             heroMinDMG = sirKent.heavyMinDMG;
             heroMaxDMG = sirKent.heavyMaxDMG;
+
+            berserker.setVisibility(View.INVISIBLE);
+            knight.setVisibility(View.VISIBLE);
+            oracle.setVisibility(View.INVISIBLE);
+            wizard.setVisibility(View.INVISIBLE);
+            assassin.setVisibility(View.INVISIBLE);
+            thief.setVisibility(View.INVISIBLE);
         }
         else if (heroClass == 3) {
             heroNameTxt.setText(yin.mageName);
@@ -67,6 +98,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+heroCurHealth);
             heroMinDMG = yin.mageMinDMG;
             heroMaxDMG = yin.mageMaxDmg;
+
+            berserker.setVisibility(View.INVISIBLE);
+            knight.setVisibility(View.INVISIBLE);
+            oracle.setVisibility(View.VISIBLE);
+            wizard.setVisibility(View.INVISIBLE);
+            assassin.setVisibility(View.INVISIBLE);
+            thief.setVisibility(View.INVISIBLE);
         }
         else if (heroClass == 4) {
             heroNameTxt.setText(koji.mageName);
@@ -74,6 +112,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+heroCurHealth);
             heroMinDMG = koji.mageMinDMG;
             heroMaxDMG = koji.mageMaxDmg;
+
+            berserker.setVisibility(View.INVISIBLE);
+            knight.setVisibility(View.INVISIBLE);
+            oracle.setVisibility(View.INVISIBLE);
+            wizard.setVisibility(View.VISIBLE);
+            assassin.setVisibility(View.INVISIBLE);
+            thief.setVisibility(View.INVISIBLE);
         }
         else if (heroClass == 5) {
             heroNameTxt.setText(marcus.lightName);
@@ -81,6 +126,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+heroCurHealth);
             heroMinDMG = marcus.lightMinDMG;
             heroMaxDMG = marcus.lightMaxDMG;
+
+            berserker.setVisibility(View.INVISIBLE);
+            knight.setVisibility(View.INVISIBLE);
+            oracle.setVisibility(View.INVISIBLE);
+            wizard.setVisibility(View.INVISIBLE);
+            assassin.setVisibility(View.VISIBLE);
+            thief.setVisibility(View.INVISIBLE);
         }
         else if (heroClass == 6) {
             heroNameTxt.setText(ossas.lightName);
@@ -88,6 +140,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
             heroHealthTxt.setText("HP: "+heroCurHealth);
             heroMinDMG = ossas.lightMinDMG;
             heroMaxDMG = ossas.lightMaxDMG;
+
+            berserker.setVisibility(View.INVISIBLE);
+            knight.setVisibility(View.INVISIBLE);
+            oracle.setVisibility(View.INVISIBLE);
+            wizard.setVisibility(View.INVISIBLE);
+            assassin.setVisibility(View.INVISIBLE);
+            thief.setVisibility(View.VISIBLE);
         }
 
         //Sets enemy info in the UI
@@ -126,6 +185,7 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
                         monsterCurHealth = Math.max(0, monsterCurHealth - heroDMG);
                         monsterHealthTxt.setText("HP: "+ monsterCurHealth);
                         messageTxt.setText("You dealt "+ heroDMG+ ". It was a critical hit!");
+                        messageTxt.setTextColor(Color.parseColor("#eb582f"));
                         if (monsterCurHealth == 0) {
                             victory = true;
                             end.putExtra("VICTORY", victory);
@@ -137,6 +197,7 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
                         monsterCurHealth = Math.max(0, monsterCurHealth - heroDMG);
                         monsterHealthTxt.setText("HP: "+ monsterCurHealth);
                         messageTxt.setText("You dealt "+ heroDMG);
+                        messageTxt.setTextColor(Color.parseColor("#39d4cc"));
                         if (monsterCurHealth == 0) {
                             victory = true;
                             end.putExtra("VICTORY", victory);
@@ -147,6 +208,7 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
                         monsterCurHealth = Math.max(0, monsterCurHealth - heroDMG);
                         monsterHealthTxt.setText("HP: "+ monsterCurHealth);
                         messageTxt.setText("You dealt "+ heroDMG);
+                        messageTxt.setTextColor(Color.parseColor("#c7c150"));
                         if (monsterCurHealth == 0) {
                             victory = true;
                             end.putExtra("VICTORY", victory);
@@ -159,11 +221,13 @@ public class BattleScreen2 extends AppCompatActivity implements View.OnClickList
                     if (heroClass == 6 && rand.nextDouble(0, 1) < ossas.evasion) { // Thief passive
                         heroHealthTxt.setText("HP: "+ heroCurHealth);
                         messageTxt.setText("Enemy dealt 0 damage. Attack has been evaded.");
+                        messageTxt.setTextColor(Color.parseColor("#FFFFF"));
                     }
                     else {
                         heroCurHealth = Math.max(0, heroCurHealth - monsterDMG);
                         heroHealthTxt.setText("HP: "+ heroCurHealth);
                         messageTxt.setText("Enemy dealt "+ monsterDMG);
+                        messageTxt.setTextColor(Color.parseColor("#c93208"));
                         if (heroCurHealth == 0) {
                             victory = false;
                             end.putExtra("VICTORY", victory);

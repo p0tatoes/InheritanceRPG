@@ -3,11 +3,13 @@ package com.example.inheritancerpg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,6 +19,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
     Spinner heroSpinner;
     Button selectionBtn;
     int heroClass;
+
+    ImageView assassin;
+    ImageView berserker;
+    ImageView knight;
+    ImageView oracle;
+    ImageView thief;
+    ImageView wizard;
 
     // Declaration for classes
     Berserker marviticus = new Berserker("Marviticus the Savage", 1000, 45, 80); // 1
@@ -35,6 +44,15 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
         statTxt = findViewById(R.id.statTxt);
 
         heroSpinner = findViewById(R.id.heroSpinner);
+
+        //hero images selection screen declaration
+        assassin = findViewById(R.id.assassin);
+        berserker = findViewById(R.id.berserker);
+        knight = findViewById(R.id.knightknight);
+        oracle = findViewById(R.id.oracle);
+        thief = findViewById(R.id.thief);
+        wizard = findViewById(R.id.wizard);
+
 
         // Drop down menu
         ArrayAdapter<String> heroChoice = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.heroes));
@@ -75,6 +93,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "DAMAGE: "+ marviticus.heavyMinDMG+ " - "+ marviticus.heavyMaxDMG+"\n\n"+
                         "A HERO THAT DEALS MORE DAMAGE WHEN WEAKENED" +
                         "\n\nSPECIAL ATTRIBUTE: DAMAGE INCREASES BY 25% PER POINT OF HEALTH LOST");
+                statTxt.setTextColor(Color.parseColor("#c7c150"));
+                berserker.setVisibility(View.VISIBLE);
+                assassin.setVisibility(View.INVISIBLE);
+                knight.setVisibility(View.INVISIBLE);
+                oracle.setVisibility(View.INVISIBLE);
+                thief.setVisibility(View.INVISIBLE);
+                wizard.setVisibility(View.INVISIBLE);
                 break;
             case "Knight":
                 this.heroClass = 2;
@@ -83,6 +108,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "HP: "+ sirKent.heavyTotalHP+ "\n"+
                         "DAMAGE: "+ sirKent.heavyMinDMG+ " - "+ sirKent.heavyMaxDMG+ "\n\n"+
                         "A HERO THAT BOASTS SUPERIOR DURABILITY");
+                statTxt.setTextColor(Color.parseColor("#c7c150"));
+                berserker.setVisibility(View.INVISIBLE);
+                assassin.setVisibility(View.INVISIBLE);
+                knight.setVisibility(View.VISIBLE);
+                oracle.setVisibility(View.INVISIBLE);
+                thief.setVisibility(View.INVISIBLE);
+                wizard.setVisibility(View.INVISIBLE);
                 break;
             case "Oracle":
                 this.heroClass = 3;
@@ -92,6 +124,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "DAMAGE: "+ yin.mageMinDMG+ " - "+ yin.mageMaxDmg+ "\n\n"+
                         "A HERO THAT DEALS MAGICAL DAMAGE AND BOASTS HIGHER DURABILITY" +
                         "\n\nSPECIAL ATTRIBUTE: DEALS 15% MORE DAMAGE TO UNDEAD");
+                statTxt.setTextColor(Color.parseColor("#39d4cc"));
+                berserker.setVisibility(View.INVISIBLE);
+                assassin.setVisibility(View.INVISIBLE);
+                knight.setVisibility(View.INVISIBLE);
+                oracle.setVisibility(View.VISIBLE);
+                thief.setVisibility(View.INVISIBLE);
+                wizard.setVisibility(View.INVISIBLE);
                 break;
             case "Wizard":
                 this.heroClass = 4;
@@ -101,6 +140,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "DAMAGE: "+ koji.mageMinDMG+ " - "+ koji.mageMaxDmg+ "\n\n"+
                         "A HERO THAT BOASTS SUPERIOR MAGICAL DAMAGE" +
                         "\n\nSPECIAL ATTRIBUTE: DEALS 15% MORE DAMAGE TO UNDEAD");
+                statTxt.setTextColor(Color.parseColor("#39d4cc"));
+                berserker.setVisibility(View.INVISIBLE);
+                assassin.setVisibility(View.INVISIBLE);
+                knight.setVisibility(View.INVISIBLE);
+                oracle.setVisibility(View.INVISIBLE);
+                thief.setVisibility(View.INVISIBLE);
+                wizard.setVisibility(View.VISIBLE);
                 break;
             case "Assassin":
                 this.heroClass = 5;
@@ -110,6 +156,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "DAMAGE: "+ marcus.lightMinDMG+ " - "+ marcus.lightMaxDMG+ "\n\n"+
                         "A HERO THAT HAS A CHANCE TO DO DOUBLE DAMAGE" +
                         "\n\nSPECIAL ATTRIBUTE: HAS 25% CHANCE TO DEAL DOUBLE DAMAGE");
+                statTxt.setTextColor(Color.parseColor("#eb582f"));
+                berserker.setVisibility(View.INVISIBLE);
+                assassin.setVisibility(View.VISIBLE);
+                knight.setVisibility(View.INVISIBLE);
+                oracle.setVisibility(View.INVISIBLE);
+                thief.setVisibility(View.INVISIBLE);
+                wizard.setVisibility(View.INVISIBLE);
                 break;
             case "Thief":
                 this.heroClass = 6;
@@ -119,6 +172,13 @@ public class SelectionScreen extends AppCompatActivity implements View.OnClickLi
                         "DAMAGE: "+ ossas.lightMinDMG+ " - "+ ossas.lightMaxDMG+ "\n\n"+
                         "A HERO THAT HAS A CHANCE TO EVADE ATTACKS" +
                         "\n\nSPECIAL ATTRIBUTE: HAS 30% CHANCE TO EVADE INCOMING DAMAGE");
+                statTxt.setTextColor(Color.parseColor("#FFFFFF"));
+                berserker.setVisibility(View.INVISIBLE);
+                assassin.setVisibility(View.INVISIBLE);
+                knight.setVisibility(View.INVISIBLE);
+                oracle.setVisibility(View.INVISIBLE);
+                thief.setVisibility(View.VISIBLE);
+                wizard.setVisibility(View.INVISIBLE);
                 break;
         }
     }
